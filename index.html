@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClimateRisk.live — Global Climate Intelligence</title>
+
+  <!-- ─── STYLES ─── -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ════════════════════════════════════
+       HEADER
+  ════════════════════════════════════ -->
+  <header id="header">
+    <div class="logo">
+      <div class="logo-icon">🌍</div>
+      <div class="logo-text">
+        <div class="logo-name">ClimateRisk<span class="accent">.live</span></div>
+        <div class="logo-sub">GLOBAL CLIMATE INTELLIGENCE</div>
+      </div>
+    </div>
+    <div class="live-pill">
+      <div class="live-dot"></div>
+      <span id="country-count">LIVE · -- COUNTRIES</span>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════ -->
+  <main id="main">
+
+    <!-- ── LEFT PANEL ── -->
+    <aside id="left-panel">
+
+      <div class="panel-section">
+        <div class="section-label">SELECT INDEX</div>
+        <div id="metric-buttons">
+          <!-- Injected by ui.js -->
+        </div>
+      </div>
+
+      <div class="panel-divider"></div>
+
+      <div class="panel-section">
+        <div class="section-label">TOP RISK COUNTRIES</div>
+        <div id="top-list">
+          <!-- Injected by ui.js -->
+        </div>
+      </div>
+
+      <div class="panel-divider"></div>
+
+      <div class="panel-section">
+        <div class="stats-box">
+          <div class="stats-title">GLOBAL STATS</div>
+          <div class="stats-row">Avg score: <b id="stat-avg">--</b></div>
+          <div class="stats-row">Extreme risk: <b id="stat-extreme" class="danger">--</b> countries</div>
+          <div class="stats-row">Severe+: <b id="stat-severe" class="warning">--</b> countries</div>
+        </div>
+      </div>
+
+    </aside>
+
+    <!-- ── GLOBE CANVAS ── -->
+    <section id="globe-wrap">
+      <canvas id="globe"></canvas>
+
+      <!-- Overlays -->
+      <div id="metric-badge" class="badge"></div>
+
+      <div id="legend">
+        <span class="leg-label">LOW</span>
+        <div class="leg-gradient"></div>
+        <span class="leg-label">EXTREME</span>
+      </div>
+
+      <div id="hint" class="hint-text">↻ Drag to rotate · Click a country · Scroll to zoom</div>
+    </section>
+
+    <!-- ── RIGHT DETAIL PANEL ── -->
+    <aside id="right-panel">
+      <div id="right-inner">
+
+        <div class="detail-header">
+          <div id="d-flag" class="detail-flag">🌍</div>
+          <button id="close-btn" class="close-btn" aria-label="Close">×</button>
+        </div>
+
+        <div id="d-name" class="detail-name"></div>
+        <div id="d-iso" class="detail-iso"></div>
+
+        <div class="score-block">
+          <div id="d-score" class="detail-score"></div>
+          <div class="score-denom">/100</div>
+        </div>
+        <div id="d-risk" class="detail-risk-label"></div>
+        <div id="d-trend" class="detail-trend"></div>
+
+        <div class="section-label" style="margin-top:16px">ALL METRICS</div>
+        <div id="d-metrics">
+          <!-- Injected by ui.js -->
+        </div>
+
+        <div class="rank-box">
+          <div class="rank-label">GLOBAL RANK</div>
+          <div id="d-rank" class="rank-num"></div>
+          <div id="d-rankof" class="rank-of"></div>
+        </div>
+
+        <div class="compare-section">
+          <div class="section-label" style="margin-top:16px">HISTORICAL TREND</div>
+          <canvas id="spark-canvas" width="178" height="60"></canvas>
+        </div>
+
+      </div>
+    </aside>
+
+  </main>
+
+</div>
+
+<!-- ─── TOOLTIP ─── -->
+<div id="tooltip" class="tooltip" role="tooltip" aria-hidden="true">
+  <div class="tooltip-inner">
+    <div id="t-flag" class="tip-flag"></div>
+    <div>
+      <div id="t-name" class="tip-name"></div>
+      <div id="t-score" class="tip-score"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     SCRIPTS  (order matters)
+════════════════════════════════════ -->
+<script src="js/data.js"></script>       <!-- country list, metric definitions        -->
+<script src="js/engine.js"></script>     <!-- math: rotation, projection, scoring     -->
+<script src="js/globe.js"></script>      <!-- canvas renderer                         -->
+<script src="js/ui.js"></script>         <!-- DOM builders, panel updates, events     -->
+<script src="js/main.js"></script>       <!-- bootstrap: wires everything together    -->
+
+</body>
+</html>

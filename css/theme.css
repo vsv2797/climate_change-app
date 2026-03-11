@@ -1,0 +1,84 @@
+/* ─────────────────────────────────────────────
+   theme.css  —  Design tokens (CSS variables)
+   Edit THIS file to restyle the entire site.
+   ───────────────────────────────────────────── */
+
+:root {
+
+  /* ── Colours ── */
+  --bg-base:        #060c18;       /* page background          */
+  --bg-panel:       rgba(4,8,16,0.92);  /* sidebar panels      */
+  --bg-header:      rgba(6,12,24,0.97); /* top bar              */
+  --bg-glass:       rgba(255,255,255,0.03); /* glass cards      */
+  --bg-glass-hover: rgba(255,255,255,0.07);
+
+  --accent:         #00e5ff;       /* cyan highlight           */
+  --danger:         #ff2244;       /* extreme risk / red       */
+  --warning:        #ff8c00;       /* high risk / orange       */
+  --success:        #00ff88;       /* low risk / green         */
+  --info:           #cc44ff;       /* purple accent            */
+
+  --text-primary:   #e2eaf4;
+  --text-muted:     #445566;
+  --text-faint:     #1a2a3a;
+
+  --border:         rgba(255,255,255,0.06);
+  --border-accent:  rgba(0,229,255,0.25);
+
+  /* ── Risk colour ramp ──
+     engine.js reads these to colour country dots.
+     Change the hex values to adjust the visual scale. */
+  --risk-minimal:   #00ddff;
+  --risk-low:       #44ee88;
+  --risk-moderate:  #ccdd00;
+  --risk-high:      #ffaa00;
+  --risk-severe:    #ff6600;
+  --risk-extreme:   #ff2244;
+
+  /* ── Typography ── */
+  --font-body:  'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono:  'Consolas', 'JetBrains Mono', monospace;
+
+  --text-xs:    9px;
+  --text-sm:    11px;
+  --text-base:  13px;
+  --text-lg:    16px;
+  --text-xl:    20px;
+  --text-2xl:   28px;
+  --text-hero:  50px;
+
+  /* ── Spacing ── */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   12px;
+  --space-lg:   16px;
+  --space-xl:   24px;
+
+  /* ── Radii ── */
+  --radius-sm:  6px;
+  --radius-md:  10px;
+  --radius-lg:  14px;
+  --radius-pill:100px;
+
+  /* ── Transitions ── */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --duration:   0.25s;
+
+  /* ── Globe ──
+     Controls the visual appearance of the 3D globe canvas */
+  --globe-ocean-light:  #0e2444;   /* centre of ocean gradient  */
+  --globe-ocean-dark:   #020810;   /* edge of ocean gradient    */
+  --globe-grid-color:   rgba(0,200,255,0.07);
+  --globe-grid-width:   0.6;
+  --globe-atmo-color:   rgba(0,160,255,0.07);
+  --globe-border-color: rgba(0,150,255,0.2);
+  --globe-spec-color:   rgba(120,190,255,0.1);
+  --globe-dot-min-r:    4;          /* px, minimum dot radius   */
+  --globe-dot-max-r:    12;         /* px, maximum dot radius   */
+  --globe-spike-scale:  0.30;       /* spike height scale 0–1   */
+
+  /* ── Panel widths ── */
+  --panel-left-w:   200px;
+  --panel-right-w:  215px;
+  --header-h:       52px;
+}

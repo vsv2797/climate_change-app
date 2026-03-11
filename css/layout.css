@@ -1,0 +1,143 @@
+/* ─────────────────────────────────────────────
+   layout.css  —  Page structure & positioning
+   ───────────────────────────────────────────── */
+
+body {
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+}
+
+/* ── App shell ── */
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+  padding: 0 var(--space-xl);
+  background: var(--bg-header);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+/* ── Main row ── */
+#main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Left panel ── */
+#left-panel {
+  width: var(--panel-left-w);
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  background: var(--bg-panel);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: var(--space-md) var(--space-sm);
+  gap: 0;
+}
+
+/* ── Globe canvas wrapper ── */
+#globe-wrap {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-base);
+  min-width: 0;
+}
+
+#globe {
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+}
+
+/* ── Right detail panel ── */
+#right-panel {
+  width: 0;
+  flex-shrink: 0;
+  border-left: 1px solid var(--border);
+  background: var(--bg-panel);
+  overflow: hidden;
+  transition: width var(--duration) var(--ease-out);
+}
+
+#right-panel.open {
+  width: var(--panel-right-w);
+}
+
+#right-inner {
+  width: var(--panel-right-w);
+  padding: var(--space-lg);
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* ── Globe overlays ── */
+#metric-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  pointer-events: none;
+}
+
+#legend {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+#hint {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  pointer-events: none;
+}
+
+/* ── Tooltip ── */
+#tooltip {
+  position: fixed;
+  z-index: 1000;
+  pointer-events: none;
+  display: none;
+}
+
+/* ── Responsive: tablet ── */
+@media (max-width: 900px) {
+  #left-panel {
+    width: 160px;
+  }
+  :root {
+    --panel-left-w: 160px;
+    --panel-right-w: 185px;
+  }
+}
+
+/* ── Responsive: mobile ── */
+@media (max-width: 600px) {
+  #left-panel {
+    display: none;
+  }
+  #right-panel.open {
+    position: absolute;
+    right: 0; top: var(--header-h); bottom: 0;
+    z-index: 20;
+  }
+}

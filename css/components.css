@@ -1,0 +1,456 @@
+/* ─────────────────────────────────────────────
+   components.css  —  All UI widget styles
+   ───────────────────────────────────────────── */
+
+/* ══ HEADER ═══════════════════════════════════ */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logo-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.logo-name {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.logo-name .accent {
+  color: var(--accent);
+}
+
+.logo-sub {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 2px;
+  margin-top: 1px;
+}
+
+.live-pill {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  background: rgba(0,255,136,0.08);
+  border: 1px solid rgba(0,255,136,0.25);
+  border-radius: var(--radius-pill);
+  padding: 5px 13px;
+  font-size: var(--text-xs);
+  color: var(--success);
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+}
+
+
+/* ══ LEFT PANEL ════════════════════════════════ */
+
+.panel-section {
+  padding: var(--space-xs) var(--space-xs);
+}
+
+.section-label {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+  padding-left: 2px;
+}
+
+.panel-divider {
+  height: 1px;
+  background: var(--border);
+  margin: var(--space-sm) 0;
+  flex-shrink: 0;
+}
+
+/* ── Index buttons ── */
+.idx-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  width: 100%;
+  padding: 9px 11px;
+  border-radius: var(--radius-md);
+  margin-bottom: 5px;
+  border: 1px solid var(--border);
+  background: var(--bg-glass);
+  color: var(--text-primary);
+  text-align: left;
+  transition: transform var(--duration) var(--ease-out),
+              background var(--duration),
+              border-color var(--duration);
+}
+
+.idx-btn:hover {
+  background: var(--bg-glass-hover);
+}
+
+.idx-btn.active {
+  transform: translateX(4px);
+}
+
+.idx-icon {
+  font-size: 17px;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.idx-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.idx-label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.idx-avg {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  margin-top: 1px;
+}
+
+.idx-score {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Top risk list ── */
+.top-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+  background: var(--bg-glass);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background var(--duration);
+}
+
+.top-row:hover {
+  background: var(--bg-glass-hover);
+}
+
+.top-rank {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  width: 16px;
+  flex-shrink: 0;
+}
+
+.top-flag {
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.top-name {
+  flex: 1;
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.top-score {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Stats box ── */
+.stats-box {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  background: rgba(255,51,85,0.06);
+  border: 1px solid rgba(255,51,85,0.15);
+}
+
+.stats-title {
+  font-size: var(--text-xs);
+  color: var(--danger);
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  margin-bottom: var(--space-sm);
+}
+
+.stats-row {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.stats-row b {
+  color: var(--text-primary);
+}
+
+.stats-row b.danger  { color: var(--danger);  }
+.stats-row b.warning { color: var(--warning); }
+
+
+/* ══ GLOBE OVERLAYS ════════════════════════════ */
+
+.badge {
+  background: rgba(6,12,24,0.92);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  padding: 6px 13px;
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+}
+
+#legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(6,12,24,0.9);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+}
+
+.leg-label {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+}
+
+.leg-gradient {
+  width: 120px;
+  height: 7px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(
+    90deg,
+    var(--risk-minimal),
+    var(--risk-low),
+    var(--risk-moderate),
+    var(--risk-high),
+    var(--risk-severe),
+    var(--risk-extreme)
+  );
+}
+
+.hint-text {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+}
+
+
+/* ══ TOOLTIP ═══════════════════════════════════ */
+
+.tooltip {
+  background: rgba(6,12,24,0.97);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md);
+  padding: 9px 13px;
+  font-size: var(--text-base);
+  min-width: 160px;
+}
+
+.tooltip-inner {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.tip-flag {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.tip-name {
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.tip-score {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  margin-top: 2px;
+}
+
+
+/* ══ RIGHT DETAIL PANEL ════════════════════════ */
+
+.detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: var(--space-sm);
+}
+
+.detail-flag {
+  font-size: 38px;
+  line-height: 1;
+}
+
+.close-btn {
+  font-size: 22px;
+  color: var(--text-muted);
+  line-height: 1;
+  padding: 2px 4px;
+  transition: color var(--duration);
+}
+
+.close-btn:hover {
+  color: var(--text-primary);
+}
+
+.detail-name {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  margin-bottom: 2px;
+}
+
+.detail-iso {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  letter-spacing: 1px;
+  margin-bottom: var(--space-lg);
+}
+
+.score-block {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  margin-bottom: 3px;
+}
+
+.detail-score {
+  font-family: var(--font-mono);
+  font-size: var(--text-hero);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.score-denom {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 7px;
+}
+
+.detail-risk-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.detail-trend {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  margin-bottom: var(--space-lg);
+}
+
+/* ── Per-metric bars ── */
+.metric-row {
+  margin-bottom: 11px;
+}
+
+.metric-hdr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3px;
+}
+
+.metric-name {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.metric-val {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.bar-track {
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.06);
+  overflow: hidden;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 0.7s var(--ease-out);
+}
+
+/* ── Rank box ── */
+.rank-box {
+  margin-top: var(--space-md);
+  padding: 10px var(--space-md);
+  border-radius: var(--radius-md);
+  background: rgba(0,229,255,0.06);
+  border: 1px solid rgba(0,229,255,0.12);
+}
+
+.rank-label {
+  font-size: var(--text-xs);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.rank-num {
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.rank-of {
+  font-size: 10px;
+  color: var(--text-faint);
+}
+
+/* ── Sparkline ── */
+.compare-section {
+  margin-top: var(--space-sm);
+}
+
+#spark-canvas {
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.02);
+  margin-top: var(--space-sm);
+}
